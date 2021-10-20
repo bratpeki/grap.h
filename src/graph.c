@@ -4,20 +4,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *createGraph2D(
-		int *x, int *y,
-		unsigned int xsize, unsigned int ysize,
-		char* xlabel, char* ylabel
-		) {
+/*
+ * Create the graph character array and return it
+ *
+ * '*x' and '*y' are arrays for X and Y point values
+ * 'xlen' and 'ylen' are distances from their respective axes
+ */
+
+char* createGraph2D(int *x, int *y, unsigned int xlen, unsigned int ylen) {
 
 	/* Setting grid dimensions */
 
-	int gxsize = 2 * xsize + 1;
-	int gysize = 2 * ysize + 1;
+	int gxlen = 2 * xlen + 1;
+	int gylen = 2 * ylen + 1;
 
 	/* Defining grid */
 
-	char *grid = (char*)calloc(sizeof(char), gxsize*gysize);
+	char *grid = (char*)calloc(sizeof(char), gxlen*gylen);
 
 	/*
 	 * Drawing lines
@@ -28,15 +31,15 @@ char *createGraph2D(
 	 * the given value of 'i' is qualified to be on the x-axis or y-axis
 	 */
 
-	int xmid = gxsize/2;
-	int ymid = gysize/2;
+	int xmid = gxlen / 2;
+	int ymid = gylen / 2;
 
 	int xq, yq;
 
-	for (unsigned int i = 0; i < gxsize*gysize; i++) {
+	for (unsigned int i = 0; i < gxlen * gylen; i++) {
 
-		xq = ( (i % gxsize) == xmid );
-		yq = ( i >= gxsize*(ymid) ) && ( i < gxsize*(ymid+1) );
+		xq = ( (i % gxlen) == xmid );
+		yq = ( i >= gxlen * ymid ) && ( i < gxlen * (ymid + 1) );
 
 		grid[i] =
 			C_XAXIS      * ( xq * !yq) +
@@ -49,6 +52,26 @@ char *createGraph2D(
 	/* Return grid */
 
 	return grid;
+
+}
+
+/*
+ * Display the graph character array
+ *
+ * '*grid' respresents the graph character array
+ * 'xlen' and 'ylen' serve the same purpose as in createGraph2D
+ */
+
+void drawGraph2D(char *grid, unsigned int xlen, unsigned int ylen) {
+
+	int gxlen = 2 * xlen + 1;
+	int gylen = 2 * ylen + 1;
+
+	for (unsigned int j = 0; j < gxlen * gylen; j++) {
+		if ( (j % gxlen == 0) * (j != 0) ) printf("\n");
+		printf("%c", grid[j]);
+	}
+	printf("\n");
 
 }
 

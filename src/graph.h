@@ -2,8 +2,16 @@
 /*
  * Here we'll be defining all graph-drawing functions
  *
- * drawGraph2D -> The master drawing function, drawing a coordinate
- *                system and point on it, with variable precision
+ * The character macros correspond to the following:
+ *
+ * C_XAXIS      - The x-axis (y = 0)
+ * C_YAXIS      - The y-axis (x = 0)
+ * C_COORDBEGIN - The coordinate origin (0, 0)
+ * C_EMPTY      - A space with no points on it
+ * C_POINT      - A space with a point
+ *
+ * createGraph2D -> Create the graph character array and return it
+ * drawGraph2D   -> Display the graph character array
  */
 
 #ifndef DRAW_GRAPH
@@ -15,13 +23,8 @@
 #define C_EMPTY      '.'
 #define C_POINT      '*'
 
-char *createGraph2D(
-		int *x, int *y,
-		unsigned int xsize, unsigned int ysize,
-		char* xlabel, char* ylabel
-		);
-
-void drawGraph2D(char *grid);
+char* createGraph2D(int *x, int *y, unsigned int xlen, unsigned int ylen);
+void  drawGraph2D  (char *grid,     unsigned int xlen, unsigned int ylen);
 
 #endif
 

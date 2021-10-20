@@ -11,18 +11,8 @@ int main() {
 
 	/* TESTING SEQUENCE */
 
-	int gxs = 2 * xs + 1;
-	int gys = 2 * ys + 1;
-
-	char *out = (char*)calloc(sizeof(char), gxs*gys);
-
-	out = createGraph2D(0, 0, xs, ys, "x", "y");
-
-	for (int i = 0; i < gxs*gys; i++) {
-		if ( (i % gxs == 0) * ( i != 0 ) ) printf("\n");
-		printf("%c", out[i]);
-	}
-	printf("\n");
+	char *out = createGraph2D(0, 0, xs, ys);
+	drawGraph2D(out, xs, ys);
 
 	return 0;
 
