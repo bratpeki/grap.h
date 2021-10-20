@@ -1,2 +1,1 @@
-# tui-graph
-A Text-based graphing tool
+# A Text-based graphing tool written in C
