@@ -4,14 +4,25 @@
 
 #include "./src/graph.h"
 
-#define xs 12
-#define ys 6
+#define xs 8
+#define ys 4
 
 int main() {
 
 	/* TESTING SEQUENCE */
 
-	char *out = createGraph2D(0, 0, xs, ys);
+	float *tx = (float*)calloc(sizeof(float), 3);
+	float *ty = (float*)calloc(sizeof(float), 3);
+
+	tx[0] = 1.0;
+	tx[1] = 1.6;
+	tx[2] = 0.5;
+
+	ty[0] = 3.0;
+	ty[1] = 3.3;
+	ty[2] = 1.5;
+
+	char *out = createGraph2D(tx, ty, 3, xs, ys);
 	drawGraph2D(out, xs, ys);
 
 	return 0;

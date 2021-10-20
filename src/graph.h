@@ -23,8 +23,10 @@
 #define C_EMPTY      '.'
 #define C_POINT      '*'
 
-char* createGraph2D(int *x, int *y, unsigned int xlen, unsigned int ylen);
-void  drawGraph2D  (char *grid,     unsigned int xlen, unsigned int ylen);
+typedef unsigned int uint;
+
+char* createGraph2D(float *x, float *y, uint count, uint xlen, uint ylen);
+void  drawGraph2D  (char *grid,                     uint xlen, uint ylen);
 
 #endif
 

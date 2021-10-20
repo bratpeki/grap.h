@@ -11,7 +11,7 @@
  * 'xlen' and 'ylen' are distances from their respective axes
  */
 
-char* createGraph2D(int *x, int *y, unsigned int xlen, unsigned int ylen) {
+char* createGraph2D(float *x, float *y, uint count, uint xlen, uint ylen) {
 
 	/* Setting grid dimensions */
 
@@ -36,7 +36,7 @@ char* createGraph2D(int *x, int *y, unsigned int xlen, unsigned int ylen) {
 
 	int xq, yq;
 
-	for (unsigned int i = 0; i < gxlen * gylen; i++) {
+	for (uint i = 0; i < gxlen * gylen; i++) {
 
 		xq = ( (i % gxlen) == xmid );
 		yq = ( i >= gxlen * ymid ) && ( i < gxlen * (ymid + 1) );
@@ -47,6 +47,22 @@ char* createGraph2D(int *x, int *y, unsigned int xlen, unsigned int ylen) {
 			C_COORDBEGIN * ( xq *  yq) +
 			C_EMPTY      * (!xq * !yq);
 
+	}
+
+	/*
+	 * Drawing points
+	 *
+	 * The procedure for each axis is:
+	 *
+	 *     Find the maximum absolute value
+	 *     Use the following formula to find the position of the point on the graph:
+	 *         graph_size : max_axis_value = graph_position : axis_value
+	 *     Draw points
+	 */
+
+	printf("x\t\t\ty\n");
+	for (uint i = 0; i < count; i++) {
+		printf("%f\t%f\n", x[i], y[i]);
 	}
 
 	/* Return grid */
@@ -62,12 +78,12 @@ char* createGraph2D(int *x, int *y, unsigned int xlen, unsigned int ylen) {
  * 'xlen' and 'ylen' serve the same purpose as in createGraph2D
  */
 
-void drawGraph2D(char *grid, unsigned int xlen, unsigned int ylen) {
+void drawGraph2D(char *grid, uint xlen, uint ylen) {
 
 	int gxlen = 2 * xlen + 1;
 	int gylen = 2 * ylen + 1;
 
-	for (unsigned int j = 0; j < gxlen * gylen; j++) {
+	for (uint j = 0; j < gxlen * gylen; j++) {
 		if ( (j % gxlen == 0) * (j != 0) ) printf("\n");
 		printf("%c", grid[j]);
 	}
