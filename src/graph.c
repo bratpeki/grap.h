@@ -14,7 +14,7 @@
  * The same logic applies to 'ylen'.
  */
 
-char* createGraph2D(float *x, float *y, uint count, uint xlen, uint ylen) {
+char* createGraph2D(double *x, double *y, uint count, uint xlen, uint ylen) {
 
 	/*
 	 * Setting grid dimensions
@@ -43,7 +43,7 @@ char* createGraph2D(float *x, float *y, uint count, uint xlen, uint ylen) {
 
 	int xq, yq;
 
-	for (uint i = 0; i < gxlen * gylen; i++) {
+	for (int i = 0; i < gxlen * gylen; i++) {
 
 		xq = ( (i % gxlen) == xmid );
 		yq = ( i >= gxlen * ymid ) && ( i < gxlen * (ymid + 1) );
@@ -69,19 +69,20 @@ char* createGraph2D(float *x, float *y, uint count, uint xlen, uint ylen) {
 	 *     Draw points
 	 */
 
-	float xmax, ymax = 0;
+	/* Finding x and y coordinate absolute maximums */
+
+	double xmax, ymax = 0;
 	int xf, yf;
 
-	/* Finding x and y coordinate absolute maximums */
-	for (uint i = 0; i < count; i++) if ( f_abs(x[i]) > xmax ) xmax = f_abs(x[i]);
-	for (uint i = 0; i < count; i++) if ( f_abs(y[i]) > ymax ) ymax = f_abs(y[i]);
+	for (int i = 0; i < count; i++) if ( f_abs(x[i]) > xmax ) xmax = f_abs(x[i]);
+	for (int i = 0; i < count; i++) if ( f_abs(y[i]) > ymax ) ymax = f_abs(y[i]);
 
-	for (uint i = 0; i < count; i++) {
+	for (int i = 0; i < count; i++) {
 
 		xf = f_round(( xlen * x[i] ) / xmax);
 		yf = f_round(( ylen * y[i] ) / ymax);
 
-		/*    Middle point        Distance from origin */
+		/*    Middle point        Dist from origin        */
 		grid[ ymid*gxlen + xlen - yf*gxlen + xf ] = C_POINT;
 
 	}
@@ -104,11 +105,25 @@ void drawGraph2D(char *grid, uint xlen, uint ylen) {
 	int gxlen = 2 * xlen + 1;
 	int gylen = 2 * ylen + 1;
 
-	for (uint j = 0; j < gxlen * gylen; j++) {
+	for (int j = 0; j < gxlen * gylen; j++) {
 		if ( (j % gxlen == 0) * (j != 0) ) printf("\n");
 		printf("%c", grid[j]);
 	}
 	printf("\n");
+
+}
+
+/* Display the graph information
+ *
+ * 'x' and 'y' are value arrays used to make a value table
+ * 'name', 'xlabel' and 'ylabel' are self-explanatory
+ */
+
+void drawGraphInfo(double *x, double *y, uint count, char *name, char *xlabel, char *ylabel) {
+
+	printf("Name:    %s\n", name);
+	printf("X-label: %s\n", xlabel);
+	printf("Y-label: %s\n", ylabel);
 
 }
 

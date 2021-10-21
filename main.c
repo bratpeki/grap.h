@@ -4,34 +4,28 @@
 
 #include "./src/graph.h"
 
+#define K    -2
+#define N     3
+#define COUNT 5
+
 int main() {
 
-	uint count;
+	double *x = (double*)calloc(sizeof(double), COUNT);
+	double *y = (double*)calloc(sizeof(double), COUNT);
 
-	float k, n, t;
-	float *x;
-	float *y;
-
-	printf("Note: We're working with linear functions, meaning:\n\n\ty = k*x +n\n\n");
-
-	printf("Insert \"k\" and \"n\", seperated by spaces: ");
-	scanf("%f %f", &k, &n);
-
-	printf("How many \"x\"'s will you need? ");
-	scanf("%u", &count);
-
-	x = (float*)calloc(sizeof(float), count);
-	y = (float*)calloc(sizeof(float), count);
-
-	for (uint _x = 0; _x < count; _x++) {
-		printf("x[%u]: ", _x); scanf("%f", &t);
-		x[_x] = t;
-		y[_x] = k*t + n;
+	for (int t = 0; t < COUNT; t++) {
+		x[t] = t;
+		y[t] = K*t + N;
 	}
 
-	char *grid = createGraph2D(x, y, count, 18, 10);
+	char *grid = createGraph2D(x, y, COUNT, 18, 10);
+
+	drawGraphInfo(x, y, COUNT, "A linear function", "X values", "Y values");
 	drawGraph2D(grid, 18, 10);
+
 	free(grid);
+	free(x);
+	free(y);
 
 	return 0;
 

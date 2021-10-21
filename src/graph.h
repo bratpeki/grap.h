@@ -15,6 +15,7 @@
  *
  * createGraph2D -> Create the graph character array and return it
  * drawGraph2D   -> Display the graph character array
+ * drawGraphInfo -> Display the graph information
  */
 
 #ifndef SRC_GRAPH
@@ -31,8 +32,9 @@
 
 typedef unsigned int uint;
 
-char* createGraph2D(float *x, float *y, uint count, uint xlen, uint ylen);
-void  drawGraph2D  (char *grid,                     uint xlen, uint ylen);
+char* createGraph2D(double *x, double *y, uint count, uint xlen, uint ylen);
+void  drawGraph2D  (char *grid,                       uint xlen, uint ylen);
+void  drawGraphInfo(double *x, double *y, uint count, char *name, char *xlabel, char *ylabel);
 
 #endif
 
