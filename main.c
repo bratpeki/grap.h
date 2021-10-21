@@ -17,16 +17,8 @@ int main() {
 	printf("Insert \"k\" and \"n\", seperated by spaces: ");
 	scanf("%f %f", &k, &n);
 
-	while (1) {
-
-		printf("How many \"x\"'s will you need? ");
-		scanf("%d", &count);
-
-		if (count == 0) printf("You need an actual number of slots, dumbass. Try again.\n");
-		if (count  < 0) count = -count;
-		if (count  > 0) break;
-
-	}
+	printf("How many \"x\"'s will you need? ");
+	scanf("%u", &count);
 
 	x = (float*)calloc(sizeof(float), count);
 	y = (float*)calloc(sizeof(float), count);
@@ -37,12 +29,8 @@ int main() {
 		y[_x] = k*t + n;
 	}
 
-	for (uint _y = 0; _y < count; _y++) {
-		printf("%f\t%f\n", x[_y], y[_y]);
-	}
-
-	char *grid = createGraph2D(x, y, count, 40, 20);
-	drawGraph2D(grid, 40, 20);
+	char *grid = createGraph2D(x, y, count, 18, 10);
+	drawGraph2D(grid, 18, 10);
 	free(grid);
 
 	return 0;

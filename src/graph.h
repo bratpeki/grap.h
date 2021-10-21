@@ -24,7 +24,7 @@
 #define C_YAXIS      '-'
 #define C_COORDBEGIN 'O'
 #define C_EMPTY      '.'
-#define C_POINT      '*'
+#define C_POINT      'x'
 
 #define f_abs(a)   ( (a) * (a >= 0) - (a) * (a < 0) )
 #define f_round(a) ( (int)a * ( (a - (int)a) < 0.5 ) + (int)(a+1) * ((a - (int)a) >= 0.5) )

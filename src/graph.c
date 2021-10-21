@@ -73,14 +73,15 @@ char* createGraph2D(float *x, float *y, uint count, uint xlen, uint ylen) {
 	int xf, yf;
 
 	/* Finding x and y coordinate absolute maximums */
-	for (uint i = 0; i < xlen; i++) if ( f_abs(x[i]) > xmax ) xmax = f_abs(x[i]);
-	for (uint i = 0; i < xlen; i++) if ( f_abs(y[i]) > ymax ) ymax = f_abs(y[i]);
+	for (uint i = 0; i < count; i++) if ( f_abs(x[i]) > xmax ) xmax = f_abs(x[i]);
+	for (uint i = 0; i < count; i++) if ( f_abs(y[i]) > ymax ) ymax = f_abs(y[i]);
 
 	for (uint i = 0; i < count; i++) {
 
 		xf = f_round(( xlen * x[i] ) / xmax);
 		yf = f_round(( ylen * y[i] ) / ymax);
 
+		/*    Middle point        Distance from origin */
 		grid[ ymid*gxlen + xlen - yf*gxlen + xf ] = C_POINT;
 
 	}
