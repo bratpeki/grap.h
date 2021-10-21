@@ -9,16 +9,23 @@
  *
  * '*x' and '*y' are arrays for X and Y point values
  * 'xlen' and 'ylen' are distances from their respective axes
+ *
+ * So, along the x-axis, the graph will stretch from -xlen to +xlen.
+ * The same logic applies to 'ylen'.
  */
 
 char* createGraph2D(float *x, float *y, uint count, uint xlen, uint ylen) {
 
-	/* Setting grid dimensions */
+	/*
+	 * Setting grid dimensions
+	 *
+	 * The addition of 1 is done to make space for the axis itself
+	 */
 
 	int gxlen = 2 * xlen + 1;
 	int gylen = 2 * ylen + 1;
 
-	/* Defining grid */
+	/* Defining square grid for the graph */
 
 	char *grid = (char*)calloc(sizeof(char), gxlen*gylen);
 
@@ -57,12 +64,25 @@ char* createGraph2D(float *x, float *y, uint count, uint xlen, uint ylen) {
 	 *     Find the maximum absolute value
 	 *     Use the following formula to find the position of the point on the graph:
 	 *         graph_size : max_axis_value = graph_position : axis_value
+	 *         graph_position * max_axis_value = graph_size * axis_value
+	 *         graph_position = ( graph_size * axis_value ) / max_axis_value
 	 *     Draw points
 	 */
 
-	printf("x\t\t\ty\n");
+	float xmax, ymax = 0;
+	int xf, yf;
+
+	/* Finding x and y coordinate absolute maximums */
+	for (uint i = 0; i < xlen; i++) if ( f_abs(x[i]) > xmax ) xmax = f_abs(x[i]);
+	for (uint i = 0; i < xlen; i++) if ( f_abs(y[i]) > ymax ) ymax = f_abs(y[i]);
+
 	for (uint i = 0; i < count; i++) {
-		printf("%f\t%f\n", x[i], y[i]);
+
+		xf = f_round(( xlen * x[i] ) / xmax);
+		yf = f_round(( ylen * y[i] ) / ymax);
+
+		grid[ ymid*gxlen + xlen - yf*gxlen + xf ] = C_POINT;
+
 	}
 
 	/* Return grid */
