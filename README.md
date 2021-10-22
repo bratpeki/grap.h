@@ -5,11 +5,11 @@
 ```
 tui-graph
 ├── ex
-│   ├── lin.c
-│   └── sqr.c
+│   ├── lin.c      Linear function examples
+│   └── sqr.c      Square function examples
 └── src
-    ├── graph.c
-    └── graph.h
+    ├── graph.c    Graph source function file
+    └── graph.h    Graph source header file
 ```
 
 ## What is it?
