@@ -23,6 +23,8 @@
 
 #define C_XAXIS      '|'
 #define C_YAXIS      '-'
+#define C_XAXISARROW '>'
+#define C_YAXISARROW '^'
 #define C_COORDBEGIN 'O'
 #define C_EMPTY      '.'
 #define C_POINT      'x'

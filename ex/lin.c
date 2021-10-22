@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "./src/graph.h"
+#include "../src/graph.h"
 
 #define K    -2
 #define N     3
@@ -18,13 +18,13 @@ int main() {
 		y[t] = K*t + N;
 	}
 
-	char *grid = createGraph2D(x, y, COUNT, 18, 10);
+	char *grid = createGraph2D(x, y, COUNT, 22, 12);
 	char name[40];
 
 	sprintf(name, "A linear function of y = %d*x + (%d)", K, N);
 
 	drawGraphInfo(x, y, COUNT, name, "X values", "Y values");
-	drawGraph2D(grid, 18, 10);
+	drawGraph2D(grid, 22, 12);
 
 	free(grid);
 	free(x);

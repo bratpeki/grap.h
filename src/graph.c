@@ -34,23 +34,33 @@ char* createGraph2D(double *x, double *y, uint count, uint xlen, uint ylen) {
 	 *
 	 * 'xmid' and 'ymid' are middle values (15/2 = 7.5 => 7)
 	 *
-	 * 'xq' and 'yq' are boolean-like values that determine weather on not
+	 * 'xq' and 'yq' are boolean-like values that determine weather or not
 	 * the given value of 'i' is qualified to be on the x-axis or y-axis
+	 *
+	 * 'xa' and 'ya' are similar to 'xq' and 'yq', with the difference being
+	 * that they determine if the given value of 'i' is the end of an axis where
+	 * an arrow will be drawn
 	 */
 
 	int xmid = gxlen / 2;
 	int ymid = gylen / 2;
 
 	int xq, yq;
+	int xa, ya;
 
 	for (int i = 0; i < gxlen * gylen; i++) {
 
 		xq = ( (i % gxlen) == xmid );
 		yq = ( i >= gxlen * ymid ) && ( i < gxlen * (ymid + 1) );
 
+		ya = ( i == xlen );
+		xa = ( i == (ylen+1)*gxlen - 1 );
+
 		grid[i] =
-			C_XAXIS      * ( xq * !yq) +
-			C_YAXIS      * (!xq *  yq) +
+			C_XAXIS      * ( xq * !yq * !ya) +
+			C_YAXIS      * (!xq *  yq * !xa) +
+			C_XAXISARROW * (!xq *  yq *  xa) +
+			C_YAXISARROW * ( xq * !yq *  ya) +
 			C_COORDBEGIN * ( xq *  yq) +
 			C_EMPTY      * (!xq * !yq);
 
