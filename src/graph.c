@@ -106,9 +106,12 @@ void drawGraph2D(char *grid, uint xlen, uint ylen) {
 	int gylen = 2 * ylen + 1;
 
 	for (int j = 0; j < gxlen * gylen; j++) {
+
 		if ( (j % gxlen == 0) * (j != 0) ) printf("\n");
 		printf("%c", grid[j]);
+
 	}
+
 	printf("\n");
 
 }

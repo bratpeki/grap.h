@@ -11,7 +11,7 @@
 Here's an example of how it works, as shown in `main.c`:
 
 ```
-Name:    A linear function
+Name:    A linear function of y = -2*x + (3)
 X-label: X values
 Y-label: Y values
 ..................|..................

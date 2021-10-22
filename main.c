@@ -19,8 +19,11 @@ int main() {
 	}
 
 	char *grid = createGraph2D(x, y, COUNT, 18, 10);
+	char name[40];
 
-	drawGraphInfo(x, y, COUNT, "A linear function", "X values", "Y values");
+	sprintf(name, "A linear function of y = %d*x + (%d)", K, N);
+
+	drawGraphInfo(x, y, COUNT, name, "X values", "Y values");
 	drawGraph2D(grid, 18, 10);
 
 	free(grid);
