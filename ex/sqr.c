@@ -5,7 +5,7 @@
 
 int main() {
 
-	const int count = 1000;
+	const int count = 100;
 	double *x = (double*)calloc(sizeof(double), count);
 	double *y = (double*)calloc(sizeof(double), count);
 
@@ -18,8 +18,8 @@ int main() {
 
 	char *grid = createGraph2D(x, y, count, 22, 12);
 
+	drawGraphInfo(x, y, count, "Square function y=x^2", "X values", "Y values");
 	drawGraph2D(grid, 22, 12);
-	drawGraphInfo(x, y, count, "Square function y=x^2", "X-Values", "Y-Values");
 
 	free(grid);
 	free(x);
