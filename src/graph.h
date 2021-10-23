@@ -6,6 +6,8 @@
  *
  * C_XAXIS       -> The x-axis (y = 0)
  * C_YAXIS       -> The y-axis (x = 0)
+ * C_XAXISARROW  -> The x-axis' first line character, an arrow head
+ * C_YAXISARROW  -> The y-axis' last line character, an arrow head
  * C_COORDBEGIN  -> The coordinate origin (0, 0)
  * C_EMPTY       -> A space with no points on it
  * C_POINT       -> A space with a point
