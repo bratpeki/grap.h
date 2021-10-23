@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../src/graph.h"
+#include "../src/include/graph.h"
 
 #define K    -2
 #define N     3

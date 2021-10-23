@@ -1,8 +1,9 @@
 
-#include "./graph.h"
+#include "./include/graph.h"
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /*
  * Create the graph character array and return it
@@ -134,9 +135,9 @@ void drawGraph2D(char *grid, uint xlen, uint ylen) {
 
 void drawGraphInfo(double *x, double *y, uint count, char *name, char *xlabel, char *ylabel) {
 
-	printf("Name:    %s\n", name);
-	printf("X-label: %s\n", xlabel);
-	printf("Y-label: %s\n", ylabel);
+	if (strlen(name))   printf("Name:    %s\n", name);
+	if (strlen(xlabel)) printf("X-label: %s\n", xlabel);
+	if (strlen(ylabel)) printf("Y-label: %s\n", ylabel);
 
 }
 
