@@ -1,4 +1,4 @@
-# term-graph-lib: A Text-based graphing tool written in C
+# term-graph-lib: A text-based graphing tool written in C
 
 ## Repo tree
 
@@ -14,7 +14,7 @@ term-graph-lib
 
 ## What is it?
 
-`term-graph-lib` is a terminal-user-interface tool for mathematical analysis and graphing.
+`term-graph-lib` is a library for function graphing in the terminal in C.
 
 ## How does it work?
 
