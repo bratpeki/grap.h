@@ -20,8 +20,8 @@
  * drawGraphInfo -> Display the graph information
  */
 
-#ifndef SRC_GRAPH
-#define SRC_GRAPH
+#ifndef INCLUDE_GRAPH
+#define INCLUDE_GRAPH
 
 #define C_XAXIS      '|'
 #define C_YAXIS      '-'

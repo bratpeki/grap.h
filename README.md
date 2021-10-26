@@ -1,9 +1,9 @@
-# tui-graph: A Text-based graphing tool written in C
+# term-graph-lib: A Text-based graphing tool written in C
 
 ## Repo tree
 
 ```
-tui-graph
+term-graph-lib
 ├── ex
 │   ├── lin.c      Linear function examples
 │   └── sqr.c      Square function examples
@@ -14,13 +14,13 @@ tui-graph
 
 ## What is it?
 
-`tui-graph` is a terminal-user-interface tool for mathematical analysis and graphing.
+`term-graph-lib` is a terminal-user-interface tool for mathematical analysis and graphing.
 
 ## How does it work?
 
-`tui-graph` consists of a set of C headers and source files.
+`term-graph-lib` consists of a set of C headers and source files.
 
-Below are the examples of compiling and running `tui-graph/ex` files.
+Below are the examples of compiling and running `term-graph-lib/ex` files.
 
 ### Linear functions
 
@@ -92,7 +92,7 @@ x.....................^......................
 
 ## How do I use it?
 
-To use it `tui-graph`, simply import the files into your project and call the functions within it.
+To use it `term-graph-lib`, simply import the files into your project and call the functions within it.
 
 The functions are listed below:
 
