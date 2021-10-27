@@ -15,7 +15,7 @@
  * The same logic applies to 'ylen'.
  */
 
-char* createGraph2D(double *x, double *y, uint count, uint xlen, uint ylen) {
+char* createGraph2D(double *x, double *y, unsigned int count, unsigned int xlen, unsigned int ylen) {
 
 	/*
 	 * Setting grid dimensions
@@ -111,7 +111,7 @@ char* createGraph2D(double *x, double *y, uint count, uint xlen, uint ylen) {
  * 'xlen' and 'ylen' serve the same purpose as in createGraph2D
  */
 
-void drawGraph2D(char *grid, uint xlen, uint ylen) {
+void drawGraph2D(char *grid, unsigned int xlen, unsigned int ylen) {
 
 	int gxlen = 2 * xlen + 1;
 	int gylen = 2 * ylen + 1;
@@ -133,7 +133,7 @@ void drawGraph2D(char *grid, uint xlen, uint ylen) {
  * 'name', 'xlabel' and 'ylabel' are self-explanatory
  */
 
-void drawGraphInfo(double *x, double *y, uint count, char *name, char *xlabel, char *ylabel) {
+void drawGraphInfo(double *x, double *y, unsigned int count, char *name, char *xlabel, char *ylabel) {
 
 	if (strlen(name))   printf("Name:    %s\n", name);
 	if (strlen(xlabel)) printf("X-label: %s\n", xlabel);

@@ -34,11 +34,9 @@
 #define f_abs(a)   ( (a) * (a >= 0) - (a) * (a < 0) )
 #define f_round(a) ( (int)a * ( (a - (int)a) < 0.5 ) + (int)(a+1) * ((a - (int)a) >= 0.5) )
 
-typedef unsigned int uint;
-
-char* createGraph2D(double *x, double *y, uint count, uint xlen, uint ylen);
-void  drawGraph2D  (char *grid,                       uint xlen, uint ylen);
-void  drawGraphInfo(double *x, double *y, uint count, char *name, char *xlabel, char *ylabel);
+char* createGraph2D(double *x, double *y, unsigned int count, unsigned int xlen, unsigned int ylen);
+void  drawGraph2D  (char *grid, unsigned int xlen, unsigned int ylen);
+void  drawGraphInfo(double *x, double *y, unsigned int count, char *name, char *xlabel, char *ylabel);
 
 #endif
 
