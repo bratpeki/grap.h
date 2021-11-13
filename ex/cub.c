@@ -16,10 +16,10 @@ int main() {
 		ind++;
 	}
 
-	char *grid = graphCreate2D(x, y, count, 22, 12);
+	char *grid = graphCreate(x, y, count, 22, 12);
 
 	graphDrawInfo(x, y, count, "Cube function y=x^3", "X values", "Y values");
-	graphDraw2D(grid, 22, 12);
+	graphDraw(grid, 22, 12);
 
 	free(grid);
 	free(x);

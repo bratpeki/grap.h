@@ -15,7 +15,7 @@
  * The same logic applies to 'ylen'.
  */
 
-char* graphCreate2D(double *x, double *y, unsigned int count, unsigned int xlen, unsigned int ylen) {
+char* graphCreate(double *x, double *y, unsigned int count, unsigned int xlen, unsigned int ylen) {
 
 	/*
 	 * Setting grid dimensions
@@ -108,10 +108,10 @@ char* graphCreate2D(double *x, double *y, unsigned int count, unsigned int xlen,
  * Display the graph character array
  *
  * '*grid' respresents the graph character array
- * 'xlen' and 'ylen' serve the same purpose as in graphCreate2D
+ * 'xlen' and 'ylen' serve the same purpose as in graphCreate
  */
 
-void graphDraw2D(char *grid, unsigned int xlen, unsigned int ylen) {
+void graphDraw(char *grid, unsigned int xlen, unsigned int ylen) {
 
 	int gxlen = 2 * xlen + 1;
 	int gylen = 2 * ylen + 1;
