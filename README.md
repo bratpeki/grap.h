@@ -134,6 +134,6 @@ The functions are listed below:
 
 | Function      | Use case                                       |
 | ------------- | ---------------------------------------------- |
-| createGraph2D | Create the graph character array and return it |
-| drawGraph2D   | Display the graph character array              |
-| drawGraphInfo | Display the graph information                  |
+| graphCreate2D | Create the graph character array and return it |
+| graphDraw2D   | Display the graph character array              |
+| graphDrawInfo | Display the graph information                  |
