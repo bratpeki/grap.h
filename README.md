@@ -27,7 +27,7 @@ Below are the examples of compiling and running `term-graph-lib/ex` files.
 ### Linear functions
 
 ```
-$ gcc ex/lin.c src/graph.c; ./a.out
+$ make lin; ./lin
 Name:    A linear function of y = -2*x + (3)
 X-label: X values
 Y-label: Y values
@@ -61,7 +61,7 @@ x.....................^......................
 ### Square functions
 
 ```
-$ gcc ex/sqr.c src/graph.c; ./a.out
+$ make sqr; ./sqr
 Name:    Square function y=x^2
 X-label: X values
 Y-label: Y values
@@ -95,7 +95,7 @@ x.....................^......................
 ### Cube functions
 
 ```
-$ gcc ex/cub.c src/graph.c; ./a.out
+$ make cub; ./cub
 Name:    Cube function y=x^3
 X-label: X values
 Y-label: Y values

@@ -20,13 +20,13 @@ int main() {
 		ind++;
 	}
 
-	char *grid = createGraph2D(x, y, count, 22, 12);
+	char *grid = graphCreate2D(x, y, count, 22, 12);
 	char name[40];
 
 	sprintf(name, "A linear function of y = %d*x + (%d)", K, N);
 
-	drawGraphInfo(x, y, count, name, "X values", "Y values");
-	drawGraph2D(grid, 22, 12);
+	graphDrawInfo(x, y, count, name, "X values", "Y values");
+	graphDraw2D(grid, 22, 12);
 
 	free(grid);
 	free(x);

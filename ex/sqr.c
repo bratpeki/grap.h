@@ -16,10 +16,10 @@ int main() {
 		ind++;
 	}
 
-	char *grid = createGraph2D(x, y, count, 22, 12);
+	char *grid = graphCreate2D(x, y, count, 22, 12);
 
-	drawGraphInfo(x, y, count, "Square function y=x^2", "X values", "Y values");
-	drawGraph2D(grid, 22, 12);
+	graphDrawInfo(x, y, count, "Square function y=x^2", "X values", "Y values");
+	graphDraw2D(grid, 22, 12);
 
 	free(grid);
 	free(x);

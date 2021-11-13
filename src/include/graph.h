@@ -15,9 +15,9 @@
  * f_abs         -> Return the absolute value of 'a'
  * f_round       -> Return the rounded value of 'a'
  *
- * createGraph2D -> Create the graph character array and return it
- * drawGraph2D   -> Display the graph character array
- * drawGraphInfo -> Display the graph information
+ * graphCreate2D -> Create the graph character array and return it
+ * graphDraw2D   -> Display the graph character array
+ * graphDrawInfo -> Display the graph information
  */
 
 #ifndef GRAPH_H
@@ -34,9 +34,9 @@
 #define f_abs(a)   ( (a) * (a >= 0) - (a) * (a < 0) )
 #define f_round(a) ( (int)a * ( (a - (int)a) < 0.5 ) + (int)(a+1) * ((a - (int)a) >= 0.5) )
 
-char* createGraph2D(double *x, double *y, unsigned int count, unsigned int xlen, unsigned int ylen);
-void  drawGraph2D  (char *grid, unsigned int xlen, unsigned int ylen);
-void  drawGraphInfo(double *x, double *y, unsigned int count, char *name, char *xlabel, char *ylabel);
+char* graphCreate2D(double *x, double *y, unsigned int count, unsigned int xlen, unsigned int ylen);
+void  graphDraw2D  (char *grid, unsigned int xlen, unsigned int ylen);
+void  graphDrawInfo(double *x, double *y, unsigned int count, char *name, char *xlabel, char *ylabel);
 
 #endif
 
