@@ -1,17 +1,23 @@
 
+CC   =gcc -std=c99
+LIN  =$(shell find -name *lin.c)
+SQR  =$(shell find -name *sqr.c)
+CUB  =$(shell find -name *cub.c)
+GRAPH=$(shell find -name *graph.c)
+
 all:
-	@gcc -o lin ./ex/lin.c ./src/graph.c
-	@gcc -o sqr ./ex/sqr.c ./src/graph.c
-	@gcc -o cub ./ex/cub.c ./src/graph.c
+	@$(CC) -o lin $(LIN) $(GRAPH)
+	@$(CC) -o sqr $(SQR) $(GRAPH)
+	@$(CC) -o cub $(CUB) $(GRAPH)
 
 lin:
-	@gcc -o lin ./ex/lin.c ./src/graph.c
+	@$(CC) -o lin $(LIN) $(GRAPH)
 
 sqr:
-	@gcc -o sqr ./ex/sqr.c ./src/graph.c
+	@$(CC) -o sqr $(SQR) $(GRAPH)
 
 cub:
-	@gcc -o cub ./ex/cub.c ./src/graph.c
+	@$(CC) -o cub $(CUB) $(GRAPH)
 
 clean:
 	@if [ -f lin ]; then rm lin; fi
