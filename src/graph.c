@@ -28,7 +28,7 @@ char* graphCreate(double *x, double *y, unsigned int count, unsigned int xlen, u
 
 	/* Defining square grid for the graph */
 
-	char *grid = (char*)calloc(sizeof(char), gxlen*gylen);
+	char* grid = (char*)calloc(sizeof(char), gxlen*gylen);
 
 	/*
 	 * Drawing lines
@@ -111,7 +111,7 @@ char* graphCreate(double *x, double *y, unsigned int count, unsigned int xlen, u
  * 'xlen' and 'ylen' serve the same purpose as in graphCreate
  */
 
-void graphDraw(char *grid, unsigned int xlen, unsigned int ylen) {
+void graphDraw(char* grid, unsigned int xlen, unsigned int ylen) {
 
 	int gxlen = 2 * xlen + 1;
 	int gylen = 2 * ylen + 1;
@@ -133,7 +133,7 @@ void graphDraw(char *grid, unsigned int xlen, unsigned int ylen) {
  * 'name', 'xlabel' and 'ylabel' are self-explanatory
  */
 
-void graphDrawInfo(double *x, double *y, unsigned int count, char *name, char *xlabel, char *ylabel) {
+void graphDrawInfo(double *x, double *y, unsigned int count, char* name, char* xlabel, char* ylabel) {
 
 	if (strlen(name))   printf("Name:    %s\n", name);
 	if (strlen(xlabel)) printf("X-label: %s\n", xlabel);
