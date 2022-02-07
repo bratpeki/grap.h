@@ -5,16 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*
- * Create the graph character array and return it
- *
- * '*x' and '*y' are arrays for X and Y point values
- * 'xlen' and 'ylen' are distances from their respective axes
- *
- * So, along the x-axis, the graph will stretch from -xlen to +xlen.
- * The same logic applies to 'ylen'.
- */
-
 char* graphCreate(double *x, double *y, unsigned int count, unsigned int xlen, unsigned int ylen) {
 
 	/*
@@ -104,13 +94,6 @@ char* graphCreate(double *x, double *y, unsigned int count, unsigned int xlen, u
 
 }
 
-/*
- * Display the graph character array
- *
- * '*grid' respresents the graph character array
- * 'xlen' and 'ylen' serve the same purpose as in graphCreate
- */
-
 void graphDraw(char* grid, unsigned int xlen, unsigned int ylen) {
 
 	int gxlen = 2 * xlen + 1;
@@ -126,12 +109,6 @@ void graphDraw(char* grid, unsigned int xlen, unsigned int ylen) {
 	printf("\n");
 
 }
-
-/* Display the graph information
- *
- * 'x' and 'y' are value arrays used to make a value table
- * 'name', 'xlabel' and 'ylabel' are self-explanatory
- */
 
 void graphDrawInfo(double *x, double *y, unsigned int count, char* name, char* xlabel, char* ylabel) {
 
