@@ -49,7 +49,8 @@ char* graphCreate(double *x, double *y, unsigned int count, unsigned int xlen, u
 
 void graphDraw(char *grid, unsigned int xlen, unsigned int ylen);
 
-/* Display the graph information
+/*
+ * Display the graph information
  *
  * 'x' and 'y' are value arrays used to make a value table
  * 'name', 'xlabel' and 'ylabel' are self-explanatory
