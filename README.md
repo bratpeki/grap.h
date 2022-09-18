@@ -1,4 +1,3 @@
-
 # term-graph-lib: A text-based graphing tool written in C
 
 ## Repo tree
@@ -138,4 +137,3 @@ The functions are listed below:
 | graphCreate   | Create the graph character array and return it |
 | graphDraw     | Display the graph character array              |
 | graphDrawInfo | Display the graph information                  |
-

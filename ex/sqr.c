@@ -1,13 +1,15 @@
 
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "../src/include/graph.h"
 
-#include <stdlib.h>
+#define count 100
 
 int main() {
 
-	const int count = 100;
-	double *x = (double*)calloc(sizeof(double), count);
-	double *y = (double*)calloc(sizeof(double), count);
+	double *x = calloc(sizeof(double), count);
+	double *y = calloc(sizeof(double), count);
 
 	int ind = 0;
 	for (int i = -count/2; i < count/2; i++) {
@@ -18,7 +20,7 @@ int main() {
 
 	char *grid = graphCreate(x, y, count, 22, 12);
 
-	graphDrawInfo(x, y, count, "Square function y=x^2", "X values", "Y values");
+	printf("Square function y=x^2\n");
 	graphDraw(grid, 22, 12);
 
 	free(grid);

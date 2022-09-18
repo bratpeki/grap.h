@@ -6,12 +6,12 @@
 
 #define K    -2
 #define N     3
+#define count 100
 
 int main() {
 
-	const int count = 100;
-	double *x = (double*)calloc(sizeof(double), count);
-	double *y = (double*)calloc(sizeof(double), count);
+	double *x = calloc(sizeof(double), count);
+	double *y = calloc(sizeof(double), count);
 
 	int ind = 0;
 	for (int i = -count/2; i < count/2; i++) {
@@ -23,9 +23,8 @@ int main() {
 	char *grid = graphCreate(x, y, count, 22, 12);
 	char name[40];
 
-	sprintf(name, "A linear function of y = %d*x + (%d)", K, N);
+	printf("A linear function of y = %d*x + (%d)\n", K, N);
 
-	graphDrawInfo(x, y, count, name, "X values", "Y values");
 	graphDraw(grid, 22, 12);
 
 	free(grid);
