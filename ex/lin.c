@@ -21,7 +21,6 @@ int main() {
 	}
 
 	char *grid = graphCreate(x, y, count, 22, 12);
-	char name[40];
 
 	printf("A linear function of y = %d*x + (%d)\n", K, N);
 
