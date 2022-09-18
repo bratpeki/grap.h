@@ -1,4 +1,4 @@
-# term-graph-lib: A text-based graphing tool written in C
+# term-graph-lib: A text-based graphing library written in C
 
 ## Repo tree
 
@@ -9,28 +9,23 @@ term-graph-lib
 │   ├── lin.c          Linear function example
 │   └── sqr.c          Square function example
 └── src
-    ├── graph.c        Graph source functions file
     └── include
         └── graph.h    Graph source header file
 ```
 
 ## What is it?
 
-`term-graph-lib` is a library for function graphing in the terminal in C.
+`term-graph-lib` is a single-header library for function graphing in the terminal in C.
 
 ## How does it work?
 
-`term-graph-lib` consists of a set of C headers and source files.
-
-Below are the examples of compiling and running `term-graph-lib/ex` files.
+Below are the results of compiling the code examples from `ex` and running the output files.
 
 ### Linear functions
 
 ```
 $ make lin; ./lin
-Name:    A linear function of y = -2*x + (3)
-X-label: X values
-Y-label: Y values
+A linear function of y = -2*x + (3)
 x.....................^......................
 .xx...................|......................
 ...xx.................|......................
@@ -62,9 +57,7 @@ x.....................^......................
 
 ```
 $ make sqr; ./sqr
-Name:    Square function y=x^2
-X-label: X values
-Y-label: Y values
+Square function y=x^2
 x.....................^......................
 .x....................|....................x.
 ..x...................|...................x..
@@ -96,9 +89,7 @@ x.....................^......................
 
 ```
 $ make cub; ./cub
-Name:    Cube function y=x^3
-X-label: X values
-Y-label: Y values
+Cube function y=x^3
 ......................^......................
 ......................|....................x.
 ......................|....................x.
@@ -128,7 +119,7 @@ x.....................|......................
 
 ## How do I use it?
 
-To use it `term-graph-lib`, simply import the files into your project and call the functions within it.
+To use it `term-graph-lib`, simply import the library into your project and call the functions within it.
 
 The functions are listed below:
 
@@ -136,4 +127,3 @@ The functions are listed below:
 | ------------- | ---------------------------------------------- |
 | graphCreate   | Create the graph character array and return it |
 | graphDraw     | Display the graph character array              |
-| graphDrawInfo | Display the graph information                  |
