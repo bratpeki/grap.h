@@ -1,4 +1,4 @@
-# term-graph-lib: A text-based graphing library written in C
+# A text-based graphing library written in C
 
 ## Repo tree
 
