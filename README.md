@@ -4,18 +4,24 @@
 
 ```
 term-graph-lib
+├── cub
 ├── ex
-│   ├── cub.c          Cub function example
-│   ├── lin.c          Linear function example
-│   └── sqr.c          Square function example
-└── src
+│   ├── cub.c       Cube function example
+│   ├── lin.c       Linear function example
+│   └── sqr.c       Square function example
+├── lin
+├── Makefile
+├── README.md
+├── sqr
+└── src             Graphic library source files
+    ├── graph.c
     └── include
-        └── graph.h    Graph source header file
+        └── graph.h
 ```
 
 ## What is it?
 
-`term-graph-lib` is a single-header library for function graphing in the terminal in C.
+`term-graph-lib` is a library for function graphing in the terminal in C.
 
 ## How does it work?
 
@@ -125,5 +131,5 @@ The functions are listed below:
 
 | Function      | Use case                                       |
 | ------------- | ---------------------------------------------- |
-| graphCreate   | Create the graph character array and return it |
-| graphDraw     | Display the graph character array              |
+| `graphCreate` | Create the graph character array and return it |
+| `graphDraw`   | Display the graph character array              |
