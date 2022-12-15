@@ -9,8 +9,8 @@ char* graphCreate(double *x, double *y, unsigned int count, unsigned int xlen, u
 	 * The addition of 1 is done to make space for the axis itself
 	 */
 
-	int gxlen = 2 * xlen + 1;
-	int gylen = 2 * ylen + 1;
+	unsigned int gxlen = 2 * xlen + 1;
+	unsigned int gylen = 2 * ylen + 1;
 
 	/* Defining square grid for the graph */
 
@@ -29,13 +29,13 @@ char* graphCreate(double *x, double *y, unsigned int count, unsigned int xlen, u
 	 * an arrow will be drawn
 	 */
 
-	int xmid = gxlen / 2;
-	int ymid = gylen / 2;
+	unsigned int xmid = gxlen / 2;
+	unsigned int ymid = gylen / 2;
 
-	int xq, yq;
-	int xa, ya;
+	unsigned int xq, yq;
+	unsigned int xa, ya;
 
-	for (int i = 0; i < gxlen * gylen; i++) {
+	for (unsigned int i = 0; i < gxlen * gylen; i++) {
 
 		xq = ( (i % gxlen) == xmid );
 		yq = ( i >= gxlen * ymid ) && ( i < gxlen * (ymid + 1) );
@@ -68,13 +68,13 @@ char* graphCreate(double *x, double *y, unsigned int count, unsigned int xlen, u
 
 	/* Finding x and y coordinate absolute maximums */
 
-	double xmax, ymax = 0;
+	double xmax = 0, ymax = 0;
 	int xf, yf;
 
-	for (int i = 0; i < count; i++) if ( ABS(x[i]) > xmax ) xmax = ABS(x[i]);
-	for (int i = 0; i < count; i++) if ( ABS(y[i]) > ymax ) ymax = ABS(y[i]);
+	for (unsigned int i = 0; i < count; i++) if ( ABS(x[i]) > xmax ) xmax = ABS(x[i]);
+	for (unsigned int i = 0; i < count; i++) if ( ABS(y[i]) > ymax ) ymax = ABS(y[i]);
 
-	for (int i = 0; i < count; i++) {
+	for (unsigned int i = 0; i < count; i++) {
 
 		xf = ROUND(( xlen * x[i] ) / xmax);
 		yf = ROUND(( ylen * y[i] ) / ymax);
@@ -97,7 +97,7 @@ void graphDraw(char* grid, unsigned int xlen, unsigned int ylen) {
 
 	for (int j = 0; j < gxlen * gylen; j++) {
 
-		if ( (j % gxlen == 0) * (j != 0) ) printf("\n");
+		if ( (j % gxlen == 0) && (j != 0) ) printf("\n");
 		printf("%c", grid[j]);
 
 	}
