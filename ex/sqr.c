@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../src/include/graph.h"
+#include "../src/include/grap.h"
 
 #define count 100
 
@@ -20,7 +20,7 @@ int main() {
 
 	char *grid = graphCreate(x, y, count, 22, 12);
 
-	printf("Square function y=x^2\n");
+	printf("Square function: y=x^2\n");
 	graphDraw(grid, 22, 12);
 
 	free(grid);

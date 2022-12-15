@@ -3,35 +3,32 @@
 ## Repo tree
 
 ```
-term-graph-lib
-├── cub
+.
 ├── ex
-│   ├── cub.c       Cube function example
-│   ├── lin.c       Linear function example
-│   └── sqr.c       Square function example
-├── lin
+│   ├── cub.c
+│   ├── lin.c
+│   └── sqr.c
 ├── Makefile
 ├── README.md
-├── sqr
-└── src             Graphic library source files
-    ├── graph.c
+└── src
+    ├── grap.c
     └── include
-        └── graph.h
+        └── grap.h
 ```
 
 ## What is it?
 
-`term-graph-lib` is a library for function graphing in the terminal in C.
+`grap.h` is a library for function graphing in the terminal in C.
 
 ## How does it work?
 
 Below are the results of compiling the code examples from `ex` and running the output files.
 
-### Linear functions
+### Linear function
 
 ```
 $ make lin; ./lin
-A linear function of y = -2*x + (3)
+Linear function: y = -2*x + (3)
 x.....................^......................
 .xx...................|......................
 ...xx.................|......................
@@ -59,11 +56,11 @@ x.....................^......................
 ......................|......................
 ```
 
-### Square functions
+### Square function
 
 ```
 $ make sqr; ./sqr
-Square function y=x^2
+Square function: y=x^2
 x.....................^......................
 .x....................|....................x.
 ..x...................|...................x..
@@ -91,11 +88,11 @@ x.....................^......................
 ......................|......................
 ```
 
-### Cube functions
+### Cube function
 
 ```
 $ make cub; ./cub
-Cube function y=x^3
+Cubic function: y=x^3
 ......................^......................
 ......................|....................x.
 ......................|....................x.
@@ -125,7 +122,7 @@ x.....................|......................
 
 ## How do I use it?
 
-To use it `term-graph-lib`, simply import the library into your project and call the functions within it.
+To use it `grap.h`, simply import the library into your project and call the functions within it.
 
 The functions are listed below:
 

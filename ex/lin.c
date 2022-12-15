@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../src/include/graph.h"
+#include "../src/include/grap.h"
 
 #define K    -2
 #define N     3
@@ -22,7 +22,7 @@ int main() {
 
 	char *grid = graphCreate(x, y, count, 22, 12);
 
-	printf("A linear function of y = %d*x + (%d)\n", K, N);
+	printf("Linear function: y = %d*x + (%d)\n", K, N);
 
 	graphDraw(grid, 22, 12);
 

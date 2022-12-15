@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../src/include/graph.h"
+#include "../src/include/grap.h"
 
 int main() {
 
@@ -19,7 +19,7 @@ int main() {
 
 	char *grid = graphCreate(x, y, count, 22, 12);
 
-	printf("Cube function y=x^3\n");
+	printf("Cubic function: y=x^3\n");
 	graphDraw(grid, 22, 12);
 
 	free(grid);

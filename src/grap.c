@@ -1,5 +1,5 @@
 
-#include "./include/graph.h"
+#include "./include/grap.h"
 
 char* graphCreate(double *x, double *y, unsigned int count, unsigned int xlen, unsigned int ylen) {
 

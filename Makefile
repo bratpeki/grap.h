@@ -3,7 +3,7 @@ CC=gcc -std=c99 -O2 -Wall -Wextra -Wpedantic
 LIN=./ex/lin.c
 SQR=./ex/sqr.c
 CUB=./ex/cub.c
-GRAPH=./src/graph.c
+GRAPH=./src/grap.c
 
 all:
 	@make lin sqr cub
