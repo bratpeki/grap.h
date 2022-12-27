@@ -14,7 +14,7 @@ char* graphCreate(double *x, double *y, unsigned int count, unsigned int xlen, u
 
 	/* Defining square grid for the graph */
 
-	char* grid = calloc(sizeof(char), gxlen*gylen);
+	char* grid = calloc(gxlen*gylen, sizeof(char));
 
 	/*
 	 * Drawing lines
