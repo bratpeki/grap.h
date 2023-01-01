@@ -4,11 +4,17 @@
 
 #include "../src/include/grap.h"
 
+#define count 100
+
 int main() {
 
-	const int count = 100;
 	double *x = calloc(sizeof(double), count);
 	double *y = calloc(sizeof(double), count);
+
+	if ( x == NULL || y == NULL ) {
+		printf("Allocation failed\n");
+		return EXIT_FAILURE;
+	}
 
 	int ind = 0;
 	for (int i = -count/2; i < count/2; i++) {
@@ -25,6 +31,8 @@ int main() {
 	free(grid);
 	free(x);
 	free(y);
+
+	return EXIT_SUCCESS;
 
 }
 

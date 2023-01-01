@@ -14,7 +14,11 @@ char* graphCreate(double *x, double *y, unsigned int count, unsigned int xlen, u
 
 	/* Defining square grid for the graph */
 
-	char* grid = calloc(gxlen*gylen, sizeof(char));
+	char* grid = (char*)calloc(gxlen*gylen, sizeof(char));
+
+	/* If allocation fails, return NULL */
+
+	if ( grid == NULL ) return NULL;
 
 	/*
 	 * Drawing lines

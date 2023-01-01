@@ -13,6 +13,11 @@ int main() {
 	double *x = calloc(sizeof(double), count);
 	double *y = calloc(sizeof(double), count);
 
+	if ( x == NULL || y == NULL ) {
+		printf("Allocation failed\n");
+		return EXIT_FAILURE;
+	}
+
 	int ind = 0;
 	for (int i = -count/2; i < count/2; i++) {
 		x[ind] = (double)i;
@@ -30,7 +35,7 @@ int main() {
 	free(x);
 	free(y);
 
-	return 0;
+	return EXIT_SUCCESS;
 
 }
 
