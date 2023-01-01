@@ -122,7 +122,7 @@ x.....................|......................
 
 ## How do I use it?
 
-To use it `grap.h`, simply import the library into your project and call the functions within it.
+To use `grap.h`, simply import the library into your project and call the functions within it.
 
 The functions are listed below:
 
