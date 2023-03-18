@@ -18,7 +18,7 @@
 
 ## What is it?
 
-`grap.h` is a library for function graphing in the terminal in C.
+`grap.h` is a C library for function graphing in the terminal.
 
 ## How does it work?
 
