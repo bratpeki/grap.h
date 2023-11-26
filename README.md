@@ -1,4 +1,4 @@
-# A text-based graphing library written in C
+# A single-header text-based graphing library written in C
 
 ## Repo tree
 
@@ -11,14 +11,12 @@
 ├── Makefile
 ├── README.md
 └── src
-    ├── grap.c
-    └── include
-        └── grap.h
+    └── grap.h
 ```
 
 ## What is it?
 
-`grap.h` is a C library for function graphing in the terminal.
+`grap.h` is a C single-header library for function graphing in the terminal.
 
 ## How does it work?
 

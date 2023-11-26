@@ -3,19 +3,18 @@ CC=gcc -std=c99 -O2 -Wall -Wextra -Wpedantic
 LIN=./ex/lin.c
 SQR=./ex/sqr.c
 CUB=./ex/cub.c
-GRAPH=./src/grap.c
 
 all:
 	@make lin sqr cub
 
 lin:
-	@$(CC) -o lin $(LIN) $(GRAPH)
+	@$(CC) -o lin $(LIN)
 
 sqr:
-	@$(CC) -o sqr $(SQR) $(GRAPH)
+	@$(CC) -o sqr $(SQR)
 
 cub:
-	@$(CC) -o cub $(CUB) $(GRAPH)
+	@$(CC) -o cub $(CUB)
 
 clean:
 	@if [ -f lin ]; then rm lin; fi
