@@ -1,4 +1,4 @@
-# A single-header text-based graphing library written in C
+# A single-header text-based graphing library written in C99
 
 ## Repo tree
 
@@ -16,7 +16,7 @@
 
 ## What is it?
 
-`grap.h` is a C single-header library for function graphing in the terminal.
+`grap.h` is a C99 single-header library for function graphing in the terminal.
 
 ## How does it work?
 
