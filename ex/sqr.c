@@ -24,6 +24,10 @@ int main() {
 	}
 
 	char *grid = graphCreate(x, y, count, 22, 12);
+	if (grid == NULL) {
+		printf("Couldn't allocate enough memory for the grid! Exiting...\n");
+		return 1;
+	}
 
 	printf("Square function: y=x^2\n");
 	graphDraw(grid, 22, 12);

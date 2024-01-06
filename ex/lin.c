@@ -26,6 +26,10 @@ int main() {
 	}
 
 	char *grid = graphCreate(x, y, count, 22, 12);
+	if (grid == NULL) {
+		printf("Couldn't allocate enough memory for the grid! Exiting...\n");
+		return 1;
+	}
 
 	printf("Linear function: y = %d*x + (%d)\n", K, N);
 
