@@ -1,5 +1,5 @@
 
-CC=gcc -std=c99 -O2 -Wall -Wextra -Wpedantic
+CC=gcc -ansi -Wall -Wextra -Wpedantic -Werror
 LIN=./ex/lin.c
 SQR=./ex/sqr.c
 CUB=./ex/cub.c
